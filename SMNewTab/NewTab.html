@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tab</title>
+      <link rel="icon" type="image/x-icon" href="House.ico">
+    <!-- The style.css file allows you to change the look of your web pages.
+         If you include the next line in all your web pages, they will all share the same look.
+         This makes it easier to make new pages for your site. -->
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+@font-face {
+font-family: myFirstFont;
+src: url('KoHo-Regular.ttf');
+}
+
+* {
+   font-family: myFirstFont;
+}
+body {
+  background-image: url('BG.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  background-size: 100% 100%;
+}
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+.bottomleft {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
+}
+h1 {
+  color: #FFFFFF;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-size: 20px;
+}
+p {
+  color: #FFFFFF;
+}
+    </style>
+    <body onload="startTime()">
+<div class="bottomright"><h1>
+<div id="txt"></div>
+ <script>
+ function startTime() {
+  const today = new Date();
+  let h = today.getHours();
+  let m = today.getMinutes();
+  let s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+  setTimeout(startTime, 1000);
+}
+
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
+}
+</script></h1></div>
+</head>
+<body>
+    <h1 style="text-align: center;">Skiomod New Tab</h1>
+<div class="bottomleft">  <iframe src="https://logg.neocities.org/SMNewTab/TimeTest.html" frameBorder="0" height="80" width="500" title="Charging state."></iframe> </div>
+
+<form style="text-align: center;" action="https://www.google.com/search" class="searchform" method="get" name="searchform" target="_blank">
+<input autocomplete="on" class="form-control search" name="q" placeholder="Google" required="required"  type="text">
+<button class="button" type="submit">Search</button>
+</form>
+<!-- Fonts: KoHo & Bellota Text Bold -->
+</body>
+</html>
